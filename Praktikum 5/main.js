@@ -46,11 +46,26 @@ $("#loginBtn").on("click", function () {
     url: API_URL,
     method: "GET",
     dataType: "json",
-    success: function () {
-      $notif
-        .removeClass("success error loading show")
-        .addClass("success show")
-        .text("Login berhasil! Selamat datang, " + email);
+    success: function (data) {
+      var found = false;
+
+      $.each(data, function (index, user) {
+        if (user.email.toLowerCase() === email.toLowerCase()) {
+          found = true;
+          $notif
+            .removeClass("success error loading show")
+            .addClass("success show")
+            .text("Login berhasil! Selamat datang, " + user.name);
+          return false;
+        }
+      });
+
+      if (!found) {
+        $notif
+          .removeClass("success error loading show")
+          .addClass("error show")
+          .text("Email tidak ditemukan.");
+      }
 
       $("#loginBtn").prop("disabled", false);
       $("#loginBtnLabel").text("Login");
