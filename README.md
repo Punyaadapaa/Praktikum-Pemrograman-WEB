@@ -23,7 +23,6 @@ Repositori ini berisi kumpulan tugas praktikum mata kuliah Pemrograman Website S
 
 - **Nama**: Daffa Arkhan Aditama
 - **NIM**: L0324010
-- **Dosen Pengampu**: Muhammad Firman Ghani
 
 ---
 
