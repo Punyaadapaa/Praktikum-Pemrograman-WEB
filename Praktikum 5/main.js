@@ -46,26 +46,11 @@ $("#loginBtn").on("click", function () {
     url: API_URL,
     method: "GET",
     dataType: "json",
-    success: function (data) {
-      var found = null;
-      $.each(data, function (i, user) {
-        if (user.email.toLowerCase() === email.toLowerCase()) {
-          found = user;
-          return false;
-        }
-      });
-
-      if (found) {
-        $notif
-          .removeClass("success error loading show")
-          .addClass("success show")
-          .text("Login berhasil! Selamat datang, " + found.name);
-      } else {
-        $notif
-          .removeClass("success error loading show")
-          .addClass("error show")
-          .text("Email atau password salah.");
-      }
+    success: function () {
+      $notif
+        .removeClass("success error loading show")
+        .addClass("success show")
+        .text("Login berhasil! Selamat datang, " + email);
 
       $("#loginBtn").prop("disabled", false);
       $("#loginBtnLabel").text("Login");
@@ -97,15 +82,6 @@ $("#registerBtn").on("click", function () {
     return;
   }
 
-  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    $notif
-      .removeClass("success error loading show")
-      .addClass("error show")
-      .text("Format email tidak valid.");
-    return;
-  }
-
   if (password.length < 6) {
     $notif
       .removeClass("success error loading show")
@@ -128,7 +104,7 @@ $("#registerBtn").on("click", function () {
   };
 
   $.ajax({
-    url: API_URL,
+    url: "https://jsonplaceholder.typicode.com/posts",
     type: "POST",
     contentType: "application/json",
     data: JSON.stringify(newUser),
