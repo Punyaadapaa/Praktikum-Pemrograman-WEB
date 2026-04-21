@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "JetBrains Mono", monospace;
+}
+
+body {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url(wallpaper.jpg);
+  background-position: center;
+  background-size: cover;
+  padding-right: 8%;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  z-index: 0;
+}
+
+.login-box {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 400px;
+  padding: 40px 36px;
+
+  background: rgba(10, 10, 10, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.login-box::before {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 48px;
+  background-color: #f0c040;
+  margin-bottom: 28px;
+}
+
+.login-header {
+  margin-bottom: 32px;
+}
+
+.brand {
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: #f0c040;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.login-header header {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.login-header p {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 1px;
+}
+
+.input-field {
+  width: 100%;
+  height: 52px;
+  font-size: 13px;
+  padding: 0 18px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  outline: none;
+  transition: 0.3s;
+  letter-spacing: 0.5px;
+}
+
+.input-field:focus {
+  background: rgba(255, 255, 255, 0.1);
+  border-bottom-color: #f0c040;
+}
+
+::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#check {
+  margin-right: 8px;
+  accent-color: #f0c040;
+}
+
+a {
+  text-decoration: none;
+}
+
+section a {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+}
+
+section a:hover {
+  color: #f0c040;
+}
+
+.input-submit {
+  position: relative;
+}
+
+.submit-btn {
+  width: 100%;
+  height: 52px;
+  background: #f0c040;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: #ffd55a;
+}
+
+.input-submit label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #111;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.sign-up-link {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.sign-up-link p {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.sign-up-link a {
+  color: #f0c040;
+  font-weight: 600;
+}
+
+.sign-up-link a:hover {
+  text-decoration: underline;
+}
