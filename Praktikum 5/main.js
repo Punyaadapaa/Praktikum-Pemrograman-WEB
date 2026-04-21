@@ -1,7 +1,9 @@
 const API_URL = "https://jsonplaceholder.typicode.com/users";
 
 function hideNotif(elId) {
-  $("#" + elId).removeClass("success error loading show").text("");
+  $("#" + elId)
+    .removeClass("success error loading show")
+    .text("");
 }
 
 // pindah halaman
@@ -26,13 +28,19 @@ $("#loginBtn").on("click", function () {
   var $notif = $("#loginNotif");
 
   if (!email || !password) {
-    $notif.removeClass("success error loading show").addClass("error show").text("Email dan password wajib diisi.");
+    $notif
+      .removeClass("success error loading show")
+      .addClass("error show")
+      .text("Email dan password wajib diisi.");
     return;
   }
 
   $("#loginBtn").prop("disabled", true);
   $("#loginBtnLabel").text("Loading...");
-  $notif.removeClass("success error loading show").addClass("loading show").text("Mengautentikasi...");
+  $notif
+    .removeClass("success error loading show")
+    .addClass("loading show")
+    .text("Mengautentikasi...");
 
   $.ajax({
     url: API_URL,
@@ -48,16 +56,25 @@ $("#loginBtn").on("click", function () {
       });
 
       if (found) {
-        $notif.removeClass("success error loading show").addClass("success show").text("Login berhasil! Selamat datang, " + found.name);
+        $notif
+          .removeClass("success error loading show")
+          .addClass("success show")
+          .text("Login berhasil! Selamat datang, " + found.name);
       } else {
-        $notif.removeClass("success error loading show").addClass("error show").text("Email tidak ditemukan. Coba: Sincere@april.biz");
+        $notif
+          .removeClass("success error loading show")
+          .addClass("error show")
+          .text("Email atau password salah.");
       }
 
       $("#loginBtn").prop("disabled", false);
       $("#loginBtnLabel").text("Login");
     },
     error: function () {
-      $notif.removeClass("success error loading show").addClass("error show").text("Gagal terhubung ke server. Coba lagi.");
+      $notif
+        .removeClass("success error loading show")
+        .addClass("error show")
+        .text("Gagal terhubung ke server. Coba lagi.");
       $("#loginBtn").prop("disabled", false);
       $("#loginBtnLabel").text("Login");
     },
@@ -66,31 +83,43 @@ $("#loginBtn").on("click", function () {
 
 // register
 $("#registerBtn").on("click", function () {
-  var name     = $("#regName").val().trim();
+  var name = $("#regName").val().trim();
   var username = $("#regUsername").val().trim();
-  var email    = $("#regEmail").val().trim();
+  var email = $("#regEmail").val().trim();
   var password = $("#regPassword").val().trim();
-  var $notif   = $("#registerNotif");
+  var $notif = $("#registerNotif");
 
   if (!name || !username || !email || !password) {
-    $notif.removeClass("success error loading show").addClass("error show").text("Semua field wajib diisi.");
+    $notif
+      .removeClass("success error loading show")
+      .addClass("error show")
+      .text("Semua field wajib diisi.");
     return;
   }
 
   var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
-    $notif.removeClass("success error loading show").addClass("error show").text("Format email tidak valid.");
+    $notif
+      .removeClass("success error loading show")
+      .addClass("error show")
+      .text("Format email tidak valid.");
     return;
   }
 
   if (password.length < 6) {
-    $notif.removeClass("success error loading show").addClass("error show").text("Password minimal 6 karakter.");
+    $notif
+      .removeClass("success error loading show")
+      .addClass("error show")
+      .text("Password minimal 6 karakter.");
     return;
   }
 
   $("#registerBtn").prop("disabled", true);
   $("#registerBtnLabel").text("Loading...");
-  $notif.removeClass("success error loading show").addClass("loading show").text("Mendaftarkan akun...");
+  $notif
+    .removeClass("success error loading show")
+    .addClass("loading show")
+    .text("Mendaftarkan akun...");
 
   var newUser = {
     name: name,
@@ -104,7 +133,10 @@ $("#registerBtn").on("click", function () {
     contentType: "application/json",
     data: JSON.stringify(newUser),
     success: function (response) {
-      $notif.removeClass("success error loading show").addClass("success show").text("Akun berhasil dibuat! ID: " + response.id + ". Silakan login.");
+      $notif
+        .removeClass("success error loading show")
+        .addClass("success show")
+        .text("Akun berhasil dibuat! ID: " + response.id + ". Silakan login.");
 
       $("#regName, #regUsername, #regEmail, #regPassword").val("");
 
@@ -112,14 +144,20 @@ $("#registerBtn").on("click", function () {
         $("#registerBox").addClass("hidden");
         $("#loginBox").removeClass("hidden");
         hideNotif("loginNotif");
-        $("#loginNotif").removeClass("success error loading show").addClass("success show").text("Registrasi berhasil! Silakan login.");
+        $("#loginNotif")
+          .removeClass("success error loading show")
+          .addClass("success show")
+          .text("Registrasi berhasil! Silakan login.");
       }, 2000);
 
       $("#registerBtn").prop("disabled", false);
       $("#registerBtnLabel").text("Register");
     },
     error: function () {
-      $notif.removeClass("success error loading show").addClass("error show").text("Gagal mendaftarkan akun. Coba lagi.");
+      $notif
+        .removeClass("success error loading show")
+        .addClass("error show")
+        .text("Gagal mendaftarkan akun. Coba lagi.");
       $("#registerBtn").prop("disabled", false);
       $("#registerBtnLabel").text("Register");
     },
