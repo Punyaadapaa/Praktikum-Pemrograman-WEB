@@ -64,7 +64,13 @@
                         ?>
                         <tr>
                             <td class="fw-bold text-muted"><?= $no++; ?></td>
-                            <td><img src="uploads/<?= $row['gambar']; ?>" class="product-img"></td>
+                            <td>
+                                <?php if ($row['gambar'] && file_exists("uploads/" . $row['gambar'])): ?>
+                                    <img src="uploads/<?= $row['gambar']; ?>" class="product-img">
+                                <?php else: ?>
+                                    <span class="text-muted">No Image</span>
+                                <?php endif; ?>
+                            </td>
                             <td class="fw-bold"><?= htmlspecialchars($row['nama_produk']); ?></td>
                             <td class="text-primary fw-bold">Rp <?= number_format($row['harga'], 0, ',', '.'); ?></td>
                             <td>

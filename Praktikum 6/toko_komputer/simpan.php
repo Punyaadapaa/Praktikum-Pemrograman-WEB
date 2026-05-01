@@ -5,6 +5,16 @@ $nama_produk = $_POST['nama_produk'];
 $harga       = $_POST['harga'];
 $stok        = $_POST['stok'];
 
+$nama_file = $_FILES['gambar']['name'];
+$tmp_file  = $_FILES['gambar']['tmp_name'];
+$folder    = "uploads/" . $nama_file;
+
+// Validasi: wajib upload gambar
+if ($nama_file == "") {
+    echo "Gambar wajib diupload!";
+    exit;
+}
+
 // Proses File Upload
 $nama_file   = $_FILES['gambar']['name'];
 $tmp_file    = $_FILES['gambar']['tmp_name'];
