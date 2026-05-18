@@ -38,7 +38,7 @@ Repositori ini berisi kumpulan tugas praktikum mata kuliah Pemrograman Website S
   - Halaman **Portal Validasi (Login)** dengan proteksi _password hashing_ (MD5) sebelum masuk ke database web utama.
   - Implementasi **Session** untuk memproteksi akses halaman utama (Dashboard).
   - Implementasi **Cookies** untuk fitur "_Remember Me_" agar _username_ otomatis terisi di halaman login.
-  - Desain UI/UX menggunakan **Bootstrap 5** dipadukan dengan kustomisasi CSS agar senada dengan tema _dark mode glassmorphism_ khas GT3 RS.
+  - Desain UI/UX menggunakan **Bootstrap 5** dipadukan dengan kustomisasi CSS agar senada dengan tema _mode glassmorphism_.
   - Telah menyertakan file `database.sql` untuk mempermudah _import_ struktur tabel dan data dasar (admin).
 
 ## 📝 Identitas Mahasiswa
