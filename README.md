@@ -28,7 +28,7 @@ Repositori ini berisi kumpulan tugas praktikum mata kuliah Pemrograman Website S
   - Fitur **Upload Gambar** produk yang akan disimpan secara otomatis ke dalam direktori `/uploads/`.
   - Integrasi database MySQL menggunakan file `db.php` beserta struktur tabel bawaan dari `smartbuild_db.sql`.
 
-### 4. [Praktikum Ke-9: PHP Native OOP, CRUD, Session & Cookies](./gt3rs_garage)
+### 4. [Praktikum Ke-9: PHP Native OOP, CRUD, Session & Cookies](./Praktikum%208)
 
 - **Tugas**: Membuat website dengan _pure_ PHP Native berbasis _Object-Oriented Programming_ (OOP) dilengkapi validasi halaman.
 - **Tema**: **GT3 RS Garage Portal** (Manajemen Inventaris _Sparepart_ Balap).
@@ -39,7 +39,7 @@ Repositori ini berisi kumpulan tugas praktikum mata kuliah Pemrograman Website S
   - Implementasi **Session** untuk memproteksi akses halaman utama (Dashboard).
   - Implementasi **Cookies** untuk fitur "_Remember Me_" agar _username_ otomatis terisi di halaman login.
   - Desain UI/UX menggunakan **Bootstrap 5** dipadukan dengan kustomisasi CSS agar senada dengan tema _dark mode glassmorphism_ khas GT3 RS.
-  - Telah menyertakan file `garage_db.sql` untuk mempermudah _import_ struktur tabel dan data dasar (admin).
+  - Telah menyertakan file `database.sql` untuk mempermudah _import_ struktur tabel dan data dasar (admin).
 
 ## 📝 Identitas Mahasiswa
 
